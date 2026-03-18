@@ -26,6 +26,8 @@ const NOTICES = [
 
 export default function ContentsPage() {
   const [tab, setTab] = useState('1')
+  function goTab(id: string) { setTab(id); window.scrollTo({ top: 0, behavior: 'smooth' }) }
+
   return (
     <main className="page-content container">
       <div className="section-head center">
@@ -33,7 +35,7 @@ export default function ContentsPage() {
         <h2 className="main-title">컨텐츠</h2>
       </div>
       <div className="sub-tabs">
-        {TABS.map(t => <a key={t.id} className={tab === t.id ? 'active' : ''} onClick={() => { setTab(t.id); window.scrollTo({ top: 0, behavior: 'smooth' }) }}>{t.label}</a>)}
+        {TABS.map(t => <a key={t.id} className={tab === t.id ? 'active' : ''} onClick={() => goTab(t.id)}>{t.label}</a>)}
       </div>
 
       {tab === '1' && (
@@ -69,25 +71,40 @@ export default function ContentsPage() {
         <>
           <div className="map-wrap">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3162.0!2d126.978!3d37.566!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzfCsDMzJzU3LjYiTiAxMjbCsDU4JzQwLjgiRQ!5e0!3m2!1sko!2skr!4v1700000000000!5m2!1sko!2skr"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3232.8!2d128.8237!3d35.9123!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x35664b4b8c5e3b7d%3A0x1234567890abcdef!2z6rWs67aB7Iq464yJ7JeQ7JWE7JuQ7JW066-57JeQ7Yq4IOuwnOyViOydmCDsnbTsl6zroZwg7JaR7J207Weg7Yq565Ok66asIDMx!5e0!3m2!1sko!2skr!4v1700000000000!5m2!1sko!2skr"
               allowFullScreen
               loading="lazy"
-              title="오시는 길"
+              title="주식회사 씨엠 오시는 길"
             />
           </div>
           <div className="grid-2">
             <div className="info-card">
-              <h4 style={{ color: 'var(--accent)', fontSize: '1.3rem', marginBottom: 16 }}>📍 주소</h4>
+              <h4 style={{ color: 'var(--accent)', fontSize: '1.3rem', marginBottom: 20 }}>📍 주소</h4>
               <ul className="card-list">
-                <li><strong>본사:</strong> 주소 입력 예정</li>
-                <li><strong>연구소:</strong> 주소 입력 예정</li>
+                <li>
+                  <strong>본사</strong><br />
+                  경상북도 경산시 하양읍 아이웨어로 31<br />
+                  경북융합산학연구원 407호
+                </li>
+                <li style={{ marginTop: 12 }}>
+                  <strong>연구소</strong><br />
+                  경상북도 경산시 하양읍 아이웨어로 31<br />
+                  경북융합산학연구원 410호
+                </li>
               </ul>
             </div>
             <div className="info-card">
-              <h4 style={{ color: 'var(--accent)', fontSize: '1.3rem', marginBottom: 16 }}>📞 연락처</h4>
+              <h4 style={{ color: 'var(--accent)', fontSize: '1.3rem', marginBottom: 20 }}>📞 연락처</h4>
               <ul className="card-list">
                 <li><strong>이메일:</strong> cm2407@naver.com</li>
                 <li><strong>운영 시간:</strong> 평일 09:00 – 18:00</li>
+                <li style={{ marginTop: 20 }}>
+                  <strong>찾아오시는 방법</strong><br />
+                  <span style={{ fontSize: '0.95rem', color: '#666' }}>
+                    경부고속도로 경산IC → 하양읍 방면 10분<br />
+                    대구선 하양역에서 차량 10분
+                  </span>
+                </li>
               </ul>
             </div>
           </div>
