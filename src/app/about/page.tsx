@@ -114,21 +114,93 @@ export default function AboutPage() {
           <div style={{ textAlign: 'center', maxWidth: 900, margin: '0 auto 50px' }}>
             <h2 style={{ fontSize: '2rem', fontWeight: 800, marginBottom: 20 }}>엄격한 글로벌 표준을 충족하는 신뢰성,<br />독보적인 기술 특허로 경쟁력을 입증합니다.</h2>
           </div>
+
           <h3 className="sub-title-left">01. 주요 인증 현황</h3>
-          <div className="cert-grid">
-            {[
-              { title: '기업부설연구소', desc: '자체 R&D 역량을 공식 인정받은 기업부설연구소 설립. 지속적인 기술 혁신 및 핵심 원천기술 개발 기반 구축.' },
-              { title: '벤처기업 인증', desc: '기술력과 성장 가능성을 인정받은 벤처기업 인증 획득. 혁신 기술 기반의 고성장 기업으로 공식 등록.' },
-              { title: 'ISO 9001', desc: '품질경영시스템 인증. 설계부터 유지보수까지 국제 표준에 따른 체계적 품질 관리 시스템 운영.' },
-              { title: 'ISO 14001', desc: '환경경영시스템 국제 인증. 친환경 제조 경영과 탄소 저감 활동을 통한 지속 가능한 경영 구축.' },
-              { title: 'GRS 인증', desc: '글로벌 재활용 표준(Global Recycled Standard) 인증. 지속 가능한 소재 사용과 환경 책임 경영 실천.' },
-            ].map(c => (
-              <div key={c.title} className="cert-box"><h5>{c.title}</h5><p>{c.desc}</p></div>
-            ))}
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 24, marginBottom: 60 }}>
+
+            {/* 기업부설연구소 */}
+            <div style={{ background: '#fff', border: '1px solid #e0e0e0', borderRadius: 16, padding: '30px 20px', textAlign: 'center', boxShadow: '0 4px 20px rgba(0,0,0,0.05)', transition: '0.3s' }}
+              onMouseEnter={e => { (e.currentTarget as HTMLDivElement).style.transform = 'translateY(-5px)'; (e.currentTarget as HTMLDivElement).style.borderColor = '#0056b3'; }}
+              onMouseLeave={e => { (e.currentTarget as HTMLDivElement).style.transform = 'translateY(0)'; (e.currentTarget as HTMLDivElement).style.borderColor = '#e0e0e0'; }}>
+              <div style={{ width: 80, height: 80, margin: '0 auto 16px', background: 'linear-gradient(135deg, #1a3a6b 0%, #0056b3 100%)', borderRadius: 16, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                <svg width="44" height="44" viewBox="0 0 44 44" fill="none">
+                  <path d="M22 6L6 14V22C6 30.8 13.1 39.1 22 41C30.9 39.1 38 30.8 38 22V14L22 6Z" fill="white" fillOpacity="0.15" stroke="white" strokeWidth="1.5"/>
+                  <path d="M14 20H30M14 26H26M18 14V20" stroke="white" strokeWidth="2" strokeLinecap="round"/>
+                  <circle cx="22" cy="26" r="3" fill="white" fillOpacity="0.8"/>
+                </svg>
+              </div>
+              <div style={{ fontSize: '0.72rem', fontWeight: 800, color: '#0056b3', letterSpacing: 1.5, marginBottom: 6 }}>CERTIFIED</div>
+              <h5 style={{ fontSize: '1.05rem', fontWeight: 800, color: '#111', marginBottom: 10 }}>기업부설연구소</h5>
+              <p style={{ fontSize: '0.85rem', color: '#666', lineHeight: 1.6, wordBreak: 'keep-all' }}>자체 R&D 역량을 공식 인정받은 기업부설연구소 설립. 핵심 원천기술 개발 기반 구축.</p>
+            </div>
+
+            {/* 벤처기업 */}
+            <div style={{ background: '#fff', border: '1px solid #e0e0e0', borderRadius: 16, padding: '30px 20px', textAlign: 'center', boxShadow: '0 4px 20px rgba(0,0,0,0.05)', transition: '0.3s' }}
+              onMouseEnter={e => { (e.currentTarget as HTMLDivElement).style.transform = 'translateY(-5px)'; (e.currentTarget as HTMLDivElement).style.borderColor = '#e63312'; }}
+              onMouseLeave={e => { (e.currentTarget as HTMLDivElement).style.transform = 'translateY(0)'; (e.currentTarget as HTMLDivElement).style.borderColor = '#e0e0e0'; }}>
+              <div style={{ width: 80, height: 80, margin: '0 auto 16px', background: 'linear-gradient(135deg, #b5200e 0%, #e63312 100%)', borderRadius: 16, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                <svg width="44" height="44" viewBox="0 0 44 44" fill="none">
+                  <polygon points="22,6 28,16 40,18 31,27 33,39 22,33 11,39 13,27 4,18 16,16" fill="white" fillOpacity="0.2" stroke="white" strokeWidth="1.5"/>
+                  <path d="M16 22L20 26L28 18" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </div>
+              <div style={{ fontSize: '0.72rem', fontWeight: 800, color: '#e63312', letterSpacing: 1.5, marginBottom: 6 }}>VENTURE</div>
+              <h5 style={{ fontSize: '1.05rem', fontWeight: 800, color: '#111', marginBottom: 10 }}>벤처기업 인증</h5>
+              <p style={{ fontSize: '0.85rem', color: '#666', lineHeight: 1.6, wordBreak: 'keep-all' }}>기술력과 성장 가능성을 인정받은 벤처기업 공식 등록. 혁신 기술 기반 고성장 기업.</p>
+            </div>
+
+            {/* ISO 9001 */}
+            <div style={{ background: '#fff', border: '1px solid #e0e0e0', borderRadius: 16, padding: '30px 20px', textAlign: 'center', boxShadow: '0 4px 20px rgba(0,0,0,0.05)', transition: '0.3s' }}
+              onMouseEnter={e => { (e.currentTarget as HTMLDivElement).style.transform = 'translateY(-5px)'; (e.currentTarget as HTMLDivElement).style.borderColor = '#0077b6'; }}
+              onMouseLeave={e => { (e.currentTarget as HTMLDivElement).style.transform = 'translateY(0)'; (e.currentTarget as HTMLDivElement).style.borderColor = '#e0e0e0'; }}>
+              <div style={{ width: 80, height: 80, margin: '0 auto 16px', background: 'linear-gradient(135deg, #023e7d 0%, #0077b6 100%)', borderRadius: 16, display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column' }}>
+                <span style={{ color: 'white', fontSize: '0.65rem', fontWeight: 900, letterSpacing: 1, opacity: 0.85 }}>ISO</span>
+                <span style={{ color: 'white', fontSize: '1.3rem', fontWeight: 900, lineHeight: 1.1 }}>9001</span>
+                <span style={{ color: 'white', fontSize: '0.55rem', fontWeight: 700, opacity: 0.75, letterSpacing: 0.5 }}>CERTIFIED</span>
+              </div>
+              <div style={{ fontSize: '0.72rem', fontWeight: 800, color: '#0077b6', letterSpacing: 1.5, marginBottom: 6 }}>QUALITY</div>
+              <h5 style={{ fontSize: '1.05rem', fontWeight: 800, color: '#111', marginBottom: 10 }}>ISO 9001</h5>
+              <p style={{ fontSize: '0.85rem', color: '#666', lineHeight: 1.6, wordBreak: 'keep-all' }}>품질경영시스템 국제 인증. 설계부터 유지보수까지 국제 표준 체계적 품질 관리.</p>
+            </div>
+
+            {/* ISO 14001 */}
+            <div style={{ background: '#fff', border: '1px solid #e0e0e0', borderRadius: 16, padding: '30px 20px', textAlign: 'center', boxShadow: '0 4px 20px rgba(0,0,0,0.05)', transition: '0.3s' }}
+              onMouseEnter={e => { (e.currentTarget as HTMLDivElement).style.transform = 'translateY(-5px)'; (e.currentTarget as HTMLDivElement).style.borderColor = '#2d6a4f'; }}
+              onMouseLeave={e => { (e.currentTarget as HTMLDivElement).style.transform = 'translateY(0)'; (e.currentTarget as HTMLDivElement).style.borderColor = '#e0e0e0'; }}>
+              <div style={{ width: 80, height: 80, margin: '0 auto 16px', background: 'linear-gradient(135deg, #1b4332 0%, #2d6a4f 100%)', borderRadius: 16, display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column' }}>
+                <span style={{ color: 'white', fontSize: '0.65rem', fontWeight: 900, letterSpacing: 1, opacity: 0.85 }}>ISO</span>
+                <span style={{ color: 'white', fontSize: '1.3rem', fontWeight: 900, lineHeight: 1.1 }}>14001</span>
+                <span style={{ color: 'white', fontSize: '0.55rem', fontWeight: 700, opacity: 0.75, letterSpacing: 0.5 }}>CERTIFIED</span>
+              </div>
+              <div style={{ fontSize: '0.72rem', fontWeight: 800, color: '#2d6a4f', letterSpacing: 1.5, marginBottom: 6 }}>ENVIRONMENT</div>
+              <h5 style={{ fontSize: '1.05rem', fontWeight: 800, color: '#111', marginBottom: 10 }}>ISO 14001</h5>
+              <p style={{ fontSize: '0.85rem', color: '#666', lineHeight: 1.6, wordBreak: 'keep-all' }}>환경경영시스템 국제 인증. 친환경 제조 경영과 탄소 저감을 통한 지속 가능 경영.</p>
+            </div>
+
+            {/* GRS */}
+            <div style={{ background: '#fff', border: '1px solid #e0e0e0', borderRadius: 16, padding: '30px 20px', textAlign: 'center', boxShadow: '0 4px 20px rgba(0,0,0,0.05)', transition: '0.3s' }}
+              onMouseEnter={e => { (e.currentTarget as HTMLDivElement).style.transform = 'translateY(-5px)'; (e.currentTarget as HTMLDivElement).style.borderColor = '#4a7c59'; }}
+              onMouseLeave={e => { (e.currentTarget as HTMLDivElement).style.transform = 'translateY(0)'; (e.currentTarget as HTMLDivElement).style.borderColor = '#e0e0e0'; }}>
+              <div style={{ width: 80, height: 80, margin: '0 auto 16px', background: 'linear-gradient(135deg, #2d5a27 0%, #4a7c59 100%)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                <svg width="44" height="44" viewBox="0 0 44 44" fill="none">
+                  <circle cx="22" cy="22" r="13" stroke="white" strokeWidth="1.5" fill="none"/>
+                  <path d="M9 22C9 22 14 18 22 22C30 26 35 22 35 22" stroke="white" strokeWidth="1.5" strokeLinecap="round"/>
+                  <path d="M22 9V35M14 13.5C14 13.5 18 17 22 17C26 17 30 13.5 30 13.5M14 30.5C14 30.5 18 27 22 27C26 27 30 30.5 30 30.5" stroke="white" strokeWidth="1.2" strokeLinecap="round"/>
+                  <path d="M19 15L22 9L25 15" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path d="M19 29L22 35L25 29" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </div>
+              <div style={{ fontSize: '0.72rem', fontWeight: 800, color: '#4a7c59', letterSpacing: 1.5, marginBottom: 6 }}>RECYCLED</div>
+              <h5 style={{ fontSize: '1.05rem', fontWeight: 800, color: '#111', marginBottom: 10 }}>GRS 인증</h5>
+              <p style={{ fontSize: '0.85rem', color: '#666', lineHeight: 1.6, wordBreak: 'keep-all' }}>글로벌 재활용 표준 인증. 지속 가능한 소재 사용과 환경 책임 경영 실천.</p>
+            </div>
+
           </div>
-          <h3 className="sub-title-left" style={{ marginTop: 60 }}>02. 핵심 보유 기술 및 지식재산권</h3>
+
+          <h3 className="sub-title-left" style={{ marginTop: 20 }}>02. 핵심 보유 기술 및 지식재산권</h3>
           <div className="patent-list">
             {[
+              { tag: '기술이전', title: '초고속 신호 분석 핵심 기술 이전', desc: '200kHz 이상 초고속 샘플링 기반 AI 이상 탐지 알고리즘의 공식 기술 이전 계약 완료. 산업 현장 적용을 위한 원천 기술 라이선스를 보유합니다.' },
               { tag: '특허 기술 1', title: '비정형 다중 센서 신호를 활용한 설비 이상 징후 조기 탐지 방법', desc: '이종 센서 데이터를 융합하여 예측 정확도를 99% 이상으로 끌어올리는 AI 알고리즘 기술입니다.' },
               { tag: '특허 기술 2', title: '산업 환경 맞춤형 고주파 노이즈 동적 필터링 시스템', desc: '기계 자체의 진동과 환경 백색 소음을 AI가 실시간으로 분리하여 순수 이상 신호만 추출합니다.' },
               { tag: '특허 기술 3', title: 'Auto-Trigger 기반 초고속 데이터 분산 수집 및 압축 전송 시스템', desc: '방대한 고속 샘플링 데이터를 네트워크 과부하 없이 안전하게 전송하는 핵심 통신 제어 기술입니다.' },
